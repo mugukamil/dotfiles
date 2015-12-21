@@ -37,35 +37,6 @@ else
 	export EDITOR='subl'
 fi
 
-# Make less the default pager, add some options and enable syntax highlight using source-highlight
-LESSPIPE=`which src-hilite-lesspipe.sh`
-[ -n "$LESSPIPE" ] && export LESSOPEN="| ${LESSPIPE} %s"
-local less_options=(
-	# If the entire text fits on one screen, just show it and quit. (Be more
-	# like "cat" and less like "more".)
-	--quit-if-one-screen
-
-	# Do not clear the screen first.
-	--no-init
-
-	# Like "smartcase" in Vim: ignore case unless the search pattern is mixed.
-	--ignore-case
-
-	# Do not automatically wrap long lines.
-	--chop-long-lines
-
-	# Allow ANSI colour escapes, but no other escapes.
-	--RAW-CONTROL-CHARS
-
-	# Do not ring the bell when trying to scroll past the end of the buffer.
-	--quiet
-
-	# Do not complain when we are on a dumb terminal.
-	--dumb
-);
-export LESS="${less_options[*]}"
-export PAGER='less'
-
 # Terminal title
 DISABLE_AUTO_TITLE="true"
 function _set_terminal_title() {
@@ -104,4 +75,3 @@ ZSH_CUSTOM="$HOME/dotfiles/zsh"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 plugins=(git autojump coffee npm sublime osx brew extract git-extras git-flow thefuck vagrant)
 source $ZSH/oh-my-zsh.sh
-source $HOME/dotfiles/.aliases
