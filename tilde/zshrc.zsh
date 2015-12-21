@@ -102,8 +102,6 @@ HIST_STAMPS="dd.mm.yyyy"
 ZSH_CUSTOM="$HOME/dotfiles/zsh"
 # Plugins (see ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-plugins=(brew extract git-extras git-flow thefuck vagrant)
+plugins=(git autojump coffee npm sublime osx brew extract git-extras git-flow thefuck vagrant)
 source $ZSH/oh-my-zsh.sh
-
-# Load extra (private) settings
-[ -f ~/.zshlocal ] && source ~/.zshlocal
+source $HOME/dotfiles/.aliases
