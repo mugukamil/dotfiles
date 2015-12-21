@@ -1,0 +1,25 @@
+# Python stuff
+*.pyc
+VENV
+
+# Folder view configuration files
+.DS_Store
+Desktop.ini
+
+# Thumbnail cache files
+._*
+Thumbs.db
+
+# Files that might appear on external disks
+.Spotlight-V100
+.Trashes
+
+# Installed npm modules
+node_modules
+npm-debug.log
+
+# Installed Bower packages
+bower_components
+
+# IDEs stuff
+.idea
