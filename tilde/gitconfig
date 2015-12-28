@@ -40,8 +40,8 @@
 
 # Any GitHub repo with my username should be checked out r/w by default
 # http://rentzsch.tumblr.com/post/564806957/public-but-hackable-git-submodules
-[url "git@github.com:sapegin/"]
-	insteadOf = "git://github.com/sapegin/"
+[url "git@github.com:mugukamil/"]
+	insteadOf = "git://github.com/mugukamil/"
 
 # URL shorthands
 [url "git@github.com:"]
@@ -74,8 +74,8 @@
 
 # Include local settings
 # Requires Git 1.7.10
-# git config -f ~/.gitlocal user.email "artem@sapegin.ru"
-# git config -f ~/.gitlocal user.name "Artem Sapegin"
+# git config -f ~/.gitlocal user.email "mugukamil@gmail.com"
+# git config -f ~/.gitlocal user.name "mugukamil"
 [include]
 	path = .gitlocal
 [filter "media"]
