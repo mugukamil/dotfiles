@@ -3,6 +3,6 @@
 --color-match=magenta underline
 --ignore-dir=.idea
 --ignore-dir=build
---type-add=css=.styl
+--type-add=css=.styl,.sass,.scss,.less
 --type-add=js=.coffee
 --type-set=md=.markdown,.md

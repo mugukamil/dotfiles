@@ -13,9 +13,7 @@ import shutil
 SOURCE_DIR = '~/dotfiles/tilde'
 EXCLUDE = []
 NO_DOT_PREFIX = []
-PRESERVE_EXTENSION = [
-	'slate.js'
-]
+PRESERVE_EXTENSION = []
 
 
 def force_remove(path):
