@@ -1,8 +1,5 @@
 #!/bin/bash
 
-COMPUTERNAME='MBP'
-LOCALHOSTNAME='mbp'
-
 sudo -v
 
 # Keep-alive: update existing 'sudo' time stamp until '.osx' has finished
