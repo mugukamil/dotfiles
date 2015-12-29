@@ -1,4 +1,37 @@
 [
+	{ "keys": ["f1"], "command": "show_overlay", "args": {"overlay": "command_palette"} },
+
+	{ "keys": ["super+v"], "command": "paste_and_indent" },
+	{ "keys": ["super+shift+v"], "command": "paste" },
+	{ "keys": ["ctrl+shift+r"], "command": "reveal_in_side_bar"},
+	{ "keys": ["ctrl+shift+e"], "command": "open_dir", "args": {"dir": "$file_path", "file": "$file_name"} },
+
+	{ "keys": ["super+i"], "command": "show_panel" },
+	{ "keys": ["super+ctrl+a"], "command": "alignment" },
+
+	{ "keys": ["super+shift+up"], "command": "select_lines", "args": {"forward": false} },
+	{ "keys": ["super+shift+down"], "command": "select_lines", "args": {"forward": true} },
+
+	{ "keys": ["ctrl+o"],
+		"command": "side_bar_open_in_browser" ,
+		"args":{"paths":[], "type":"testing"}
+	},
+
+	{ "keys": ["super+0"], "command": "toggle_side_bar" },
+
+	{ "keys": ["i", "i"], "command": "exit_insert_mode", "context":
+       [
+           { "key": "setting.command_mode", "operand": false },
+           { "key": "setting.is_widget", "operand": false }
+       ]
+	},
+	{ "keys": ["ctrl+j"], "command": "scroll_lines", "args": {"amount": -0.45 },
+		"context": [{"key": "setting.command_mode"}, {"key": "setting.vintage_ctrl_keys"}]
+	},
+	{ "keys": ["ctrl+k"], "command": "nothing"},
+	{ "keys": ["ctrl+k"], "command": "scroll_lines", "args": {"amount": 0.45 },
+		"context": [{"key": "setting.command_mode"}, {"key": "setting.vintage_ctrl_keys"}]
+	},
 	{
 		"keys": ["tab"], 
 		"command": "expand_abbreviation_by_tab", 
