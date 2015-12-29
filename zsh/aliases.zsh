@@ -25,4 +25,24 @@ alias -- +x="chmod +x"
 alias get="curl -O -L"
 alias vaprobash="curl -L http://bit.ly/vaprobash > Vagrantfile"
 
+# Magic project Opener
+repo() { cd "$("$HOME/dotfiles/bin/repo" $1)"; }
+
+# My IP
+alias myip="ifconfig | grep 'inet' | grep -v 127.0.0.1 | awk '{print \$2}'"
+
+# Download file
+alias get="curl -O -L"
+
+# HTTP Request
+for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
+  alias "$method"="lwp-request -m '$method'"
+done
+
+# Grunt
+alias gw="grunt watch --stack --debug"
+alias gww="grunt browserSync watch --stack --debug"
+
+# Tamia generator
+tm() { yo tamia:$@; }
 

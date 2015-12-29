@@ -1,0 +1,15 @@
+<snippet>
+    <content><![CDATA[
+    border: 0;
+    font: 0/0 a;
+    text-shadow: none;
+    color: transparent;
+    background: url();
+    width: px;
+    height: px;
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>ir</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <scope>source.less, source.css, source.scss, source.sass</scope>
+</snippet>

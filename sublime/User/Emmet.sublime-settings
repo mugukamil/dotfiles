@@ -1,3 +1,13 @@
 {
-	"extensions_path": "../User/emmet"
+	"snippets": {
+	  "html": {
+			"abbreviations": {
+				"jq": "<script src=\"http://code.jquery.com/jquery-latest.min.js\"></script>"
+			}
+		}
+	},
+	"preferences": {
+		"css.gradient.fallback": true,
+		"filter.commentAfter": "\u0020<!-- /<%= attr(\"id\", \"#\") %><%= attr(\"class\", \".\") %> -->"
+	}
 }
