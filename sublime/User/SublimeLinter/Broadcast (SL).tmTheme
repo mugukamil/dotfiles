@@ -36,6 +36,17 @@
 		</dict>
 		<dict>
 			<key>name</key>
+			<string>Source</string>
+			<key>scope</key>
+			<string>source.js.embedded.html</string>
+			<key>settings</key>
+			<dict>
+				<key>background</key>
+				<string>#00000020</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
 			<string>Comment</string>
 			<key>scope</key>
 			<string>comment,punctuation.definition.comment</string>

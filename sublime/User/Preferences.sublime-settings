@@ -1,26 +1,26 @@
 {
+	"auto_complete_delay": 1000,
 	"auto_complete_selector": "source - comment",
-  "auto_complete_delay": 1000,
 	"caret_extra_bottom": 0,
 	"caret_extra_top": 0,
 	"caret_extra_width": 1,
 	"caret_style": "phase",
 	"close_windows_when_empty": true,
 	"color_scheme": "Packages/User/SublimeLinter/Broadcast (SL).tmTheme",
+	"default_line_ending": "unix",
+	"detect_indentaion": true,
 	"draw_indent_guides": true,
-  "default_line_ending": "unix",
-  "detect_indentaion": true,
-  "fallback_encoding": "Cyrillic (Windows 1251)",
 	"draw_white_space": "selection",
+	"fallback_encoding": "Cyrillic (Windows 1251)",
 	"file_exclude_patterns":
 	[
 		".DS_Store",
 		"Desktop.ini",
 		"*.pyc",
 		"._*",
-    ".db",
-    ".sublime-workspace",
-    ".*_*",
+		".db",
+		".sublime-workspace",
+		".*_*",
 		"Thumbs.db",
 		".Spotlight-V100",
 		".Trashes",
@@ -37,7 +37,7 @@
 		".svn",
 		".git",
 		"__pycache__",
-    "bower_components",
+		"bower_components",
 		"*.pyc",
 		"*.pyo",
 		"*.exe",
@@ -63,15 +63,15 @@
 	"font_size": 14,
 	"gpu_window_buffer": "true",
 	"gutter": true,
+	"hayaku_CSS_colors_case": "lowercase",
+	"hayaku_CSS_numbers_leading_zero": false,
+	"hayaku_CSS_numbers_syntax_autoguess":
+	[
+		"selector {",
+		" property: value;",
+		" }"
+	],
 	"hayaku_CSS_prefix_disable": true,
-  "hayaku_CSS_colors_case": "lowercase",
-  "hayaku_CSS_numbers_leading_zero": false,
-  "hayaku_CSS_numbers_syntax_autoguess": 
-  [
-    "selector {",
-    " property: value;",
-    " }"
-   ],
 	"highlight_line": true,
 	"highlight_modified_tabs": true,
 	"ignored_packages":
@@ -79,12 +79,12 @@
 		"",
 		"Markdown"
 	],
+	"indent_guide_options":
+	[
+		"draw_normal",
+		"draw_active"
+	],
 	"indent_to_bracket": true,
-  "indent_guide_options":
-  [
-    "draw_normal",
-    "draw_active"
-  ],
 	"line_numbers": true,
 	"line_padding_bottom": 0,
 	"line_padding_top": 0,
