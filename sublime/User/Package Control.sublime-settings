@@ -2,6 +2,10 @@
 	"bootstrapped": true,
 	"in_process_packages":
 	[
+		"AutoCompleteJS",
+		"Blade Snippets",
+		"Ciapre Color Scheme",
+		"jQuery Mobile 1.4 Snippets"
 	],
 	"installed_packages":
 	[
