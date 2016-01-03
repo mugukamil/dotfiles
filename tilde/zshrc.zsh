@@ -23,11 +23,6 @@ PATH='/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin'
 [ -d ~/bin ] && _prepend_path "$HOME/bin"
 export PATH
 
-# nvm
-if [ -d ~/.nvm ]; then
-	export NVM_DIR="$HOME/.nvm"
-	source "$NVM_DIR/nvm.sh"
-fi
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
