@@ -2,10 +2,6 @@
 	"bootstrapped": true,
 	"in_process_packages":
 	[
-		"AutoCompleteJS",
-		"Blade Snippets",
-		"Ciapre Color Scheme",
-		"jQuery Mobile 1.4 Snippets"
 	],
 	"installed_packages":
 	[
@@ -13,17 +9,14 @@
 		"Alignment",
 		"All Autocomplete",
 		"ApacheConf.tmLanguage",
-		"AutoCompleteJS",
 		"AutoFileName",
 		"Autoprefixer",
 		"Babel",
 		"Backbone.js",
 		"Better CoffeeScript",
-		"Blade Snippets",
 		"Blade Spacer",
 		"Block Cursor Everywhere",
 		"BracketHighlighter",
-		"Ciapre Color Scheme",
 		"CoffeeComplete Plus (Autocompletion)",
 		"Color Highlighter",
 		"ColorSchemeEditor",
@@ -67,7 +60,6 @@
 		"JavaScriptNext - ES6 Syntax",
 		"Jekyll",
 		"jQuery",
-		"jQuery Mobile 1.4 Snippets",
 		"JS Snippets",
 		"Koken",
 		"Laravel Blade Highlighter",
