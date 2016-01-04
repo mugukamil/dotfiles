@@ -21,14 +21,8 @@ PATH='/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin'
 [ -d /usr/local/opt/coreutils/libexec/gnubin ] && _prepend_path "/usr/local/opt/coreutils/libexec/gnubin"
 [ -d ~/dotfiles/bin ] && _prepend_path "$HOME/dotfiles/bin"
 [ -d ~/bin ] && _prepend_path "$HOME/bin"
-[ -d ~/.nvm ] && _prepend_path "$HOME/.nvm"
 export PATH
 
-# nvm
-if [ -d ~/.nvm ]; then
-	export NVM_DIR="$HOME/.nvm"
-	source "$NVM_DIR/nvm.sh"
-fi
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
