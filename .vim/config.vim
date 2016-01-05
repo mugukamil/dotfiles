@@ -135,3 +135,15 @@ set mouse=a    " Mouse in all modes
 " Better complete options to speed it up
 set complete=.,w,b,u,U
 let g:session_autoload="no"
+
+
+" powerline symbols
+let g:airline_symbols = {}
+
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+let g:airline_symbols.branch = ''
+let g:airline_symbols.readonly = ''
+let g:airline_symbols.linenr = ''
