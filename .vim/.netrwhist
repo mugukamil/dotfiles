@@ -1,0 +1,5 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/Users/mugukamil/dotfiles'
+let g:netrw_dirhist_2='/Users/mugukamil/dotfiles/zsh'
+let g:netrw_dirhist_3='/Users/mugukamil/dotfiles/sublime/User/Package Control.cache'
