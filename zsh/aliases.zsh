@@ -46,3 +46,10 @@ alias gww="grunt browserSync watch --stack --debug"
 # Tamia generator
 tm() { yo tamia:$@; }
 
+# File Size
+alias fs="stat -f \"%z bytes\""
+
+# find shorthand
+function f() {
+  find . -name "$1"
+}

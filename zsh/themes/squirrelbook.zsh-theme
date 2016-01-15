@@ -6,7 +6,7 @@
 # License: MIT
 # https://github.com/sapegin/dotfiles
 
-local PROMPT_SYMBOL="❯"
+local PROMPT_SYMBOL="☁ "
 local CLEAN_SYMBOL="☀"
 local DIRTY_SYMBOL="☂"
 
