@@ -48,7 +48,7 @@ fi
 
 # TIME
 if [ ! -n "${BULLETTRAIN_TIME_SHOW+1}" ]; then
-  BULLETTRAIN_TIME_SHOW=true
+  BULLETTRAIN_TIME_SHOW=false
 fi
 if [ ! -n "${BULLETTRAIN_TIME_BG+1}" ]; then
   BULLETTRAIN_TIME_BG=white
