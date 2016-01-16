@@ -155,9 +155,6 @@ defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadRightC
 defaults -currentHost write NSGlobalDomain com.apple.trackpad.trackpadCornerClickBehavior -int 1
 defaults -currentHost write NSGlobalDomain com.apple.trackpad.enableSecondaryClick -bool true
 
-# Disable “natural” (Lion-style) scrolling
-defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
-
 # mute all sounds, incl volume change feedback
 defaults write "com.apple.sound.beep.feedback" -int 0
 defaults write com.apple.systemsound 'com.apple.sound.beep.volume' -float 0
