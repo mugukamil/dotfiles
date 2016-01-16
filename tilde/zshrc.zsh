@@ -52,7 +52,7 @@ export GIT_FRIENDLY_NO_BUNDLE=true
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 # Theme.
-ZSH_THEME="bullet-train"
+ZSH_THEME="squirrelbook"
 # Uncomment the following line to use hyphen-insensitive completion. Case
 # sensitive completion must be off. _ and - will be interchangeable.
 # HYPHEN_INSENSITIVE="true"
