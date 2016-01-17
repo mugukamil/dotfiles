@@ -24,12 +24,7 @@ PATH='/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin'
 export PATH
 
 
-# Preferred editor for local and remote sessions
-if [[ -n $SSH_CONNECTION ]]; then
-	export EDITOR='vim'
-else
-	export EDITOR='subl'
-fi
+export EDITOR='vim'
 
 # Terminal title
 DISABLE_AUTO_TITLE="true"
@@ -52,7 +47,7 @@ export GIT_FRIENDLY_NO_BUNDLE=true
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 # Theme.
-ZSH_THEME="bullet-train"
+ZSH_THEME="squirrelbook"
 # Uncomment the following line to use hyphen-insensitive completion. Case
 # sensitive completion must be off. _ and - will be interchangeable.
 # HYPHEN_INSENSITIVE="true"
