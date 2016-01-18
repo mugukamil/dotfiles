@@ -10,6 +10,7 @@
 	"detect_indentaion": true,
 	"draw_indent_guides": true,
 	"draw_white_space": "selection",
+	"enable_tab_scrolling": false,
 	"fallback_encoding": "Cyrillic (Windows 1251)",
 	"file_exclude_patterns":
 	[
@@ -77,6 +78,7 @@
 	"highlight_modified_tabs": true,
 	"ignored_packages":
 	[
+		"Markdown"
 	],
 	"indent_guide_options":
 	[
@@ -90,6 +92,9 @@
 	"margin": -2,
 	"match_brackets": true,
 	"match_brackets_angle": true,
+	"material_theme_compact_sidebar": true,
+	"material_theme_small_statusbar": false,
+	"material_theme_small_tab": true,
 	"move_to_limit_on_up_down": false,
 	"open_files_in_new_window": false,
 	"overlay_scroll_bars": "enabled",
@@ -98,12 +103,9 @@
 	"scroll_speed": 0,
 	"show_encoding": true,
 	"show_line_endings": true,
-	"soda_folder_icons": true,
+	"show_panel_on_build": false,
 	"tab_size": 2,
-	"theme": "Material-Theme-Darker.sublime-theme",
-	"material_theme_small_tab": true,
-  "material_theme_small_statusbar": true , // Set small status bar
-  "material_theme_compact_sidebar": true , // Set small status bar
+	"theme": "Material-Theme.sublime-theme",
 	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": false,
 	"use_simple_full_screen": true,

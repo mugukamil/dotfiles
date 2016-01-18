@@ -37,6 +37,7 @@
 		"EncodingHelper",
 		"ES6-Toolkit",
 		"Extract Sublime Package",
+		"Fix Mac Path",
 		"FixMyJS",
 		"Git",
 		"GitGutter",
@@ -64,6 +65,7 @@
 		"JS Snippets",
 		"JSCS-Formatter",
 		"Koken",
+		"Laravel 5 Artisan",
 		"Laravel Blade Highlighter",
 		"Lazy Backbone.js",
 		"LESS",
@@ -108,7 +110,6 @@
 		"Theme - Spacegray",
 		"Themr",
 		"Underscore.js Snippets",
-		"Vagrant",
 		"WakaTime",
 		"WordPress"
 	]
