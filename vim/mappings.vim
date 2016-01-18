@@ -58,13 +58,10 @@ nnoremap <silent> * :let stay_star_view = winsaveview()<cr>*:call winrestview(st
 " ---------------
 " Window Movement
 " ---------------
-nnoremap <silent> gh :WriteBufferIfNecessary<CR>:wincmd h<CR>
-nnoremap <silent> <M-h> :wincmd h<CR>
-nnoremap <silent> gj :WriteBufferIfNecessary<CR>:wincmd j<CR>
-nnoremap <silent> gk :WriteBufferIfNecessary<CR>:wincmd k<CR>
-nnoremap <silent> <M-k> :wincmd k<CR>
-nnoremap <silent> gl :WriteBufferIfNecessary<CR>:wincmd l<CR>
-nnoremap <silent> <M-l> :wincmd l<CR>
+nmap <C-h> <C-w>h
+nmap <C-j> <C-w>j
+nmap <C-k> <C-w>k
+nmap <C-l> <C-w>l
 
 "   4 Window Splits
 "
@@ -196,4 +193,25 @@ if has('mac') || has('gui_macvim') || has('gui_mac')
   nnoremap <silent> <leader>yd :let @*=expand("%:p:h")<CR>
 endif
 
-map <silent><leader>nn :NERDTreeToggle<CR>
+map <silent><leader>, :NERDTreeToggle<CR>
+
+" Fast saves
+nmap <leader>w :w!<cr>
+
+" Auto change directory to match current file ,cd
+nnoremap ,cd :cd %:p:h<CR>:pwd<CR>
+
+" Load the current buffer in Chrome
+nnoremap ,c :!open -a Google\ Chrome<cr>
+
+" Easy motion stuff
+let g:EasyMotion_leader_key = '<leader>'
+
+" Familiar commands for file/symbol browsing
+map <D-p> :CtrlP<cr>
+map <C-r> :CtrlPBufTag<cr>
+
+" Down is really the next line
+nnoremap j gj
+nnoremap k gk
+

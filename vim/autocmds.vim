@@ -52,5 +52,8 @@ if has('autocmd')
                 \ |   NERDTree
                 \ |   wincmd w
                 \ | endif
+
+    autocmd cursorhold * set nohlsearch
+    autocmd cursormoved * set hlsearch
   augroup END
 endif

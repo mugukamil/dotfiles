@@ -10,7 +10,6 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'gmarik/vundle'
-Plugin 'mutewinter/GIFL'
 Plugin 'HelpClose'
 Plugin 'sk1418/Join'
 Plugin 'L9'
@@ -66,7 +65,6 @@ Plugin 'takac/vim-hardtime'
 Plugin 'nathanaelkane/vim-Indent-guides'
 Plugin 'honza/vim-snippets'
 Plugin 'digitaltoad/vim-jade'
-Plugin 'pangloss/vim-javascript'
 Plugin 'othree/javascript-libraries-syntax.vim'
 Plugin 'elzr/vim-json'
 Plugin 'mxw/vim-jsx'
@@ -95,6 +93,10 @@ Plugin 'nelstrom/vim-visual-star-search'
 Plugin 'papanikge/vim-voogle'
 Plugin 'benmills/vimux'
 Plugin 'mattn/webapi-vim'
+Plugin 'jelera/vim-javascript-syntax'
+Plugin 'w0ng/vim-hybrid'
+Plugin 'mustache/vim-mustache-handlebars'
+
 
 call vundle#end()
 

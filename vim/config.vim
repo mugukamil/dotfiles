@@ -5,8 +5,9 @@
 " ---------------
 " Color
 " ---------------
-set background=dark
-colorscheme jellybeans
+syntax enable
+colorscheme xoria256
+set guifont=menlo:h16
 " Force 256 color mode if available
 if $TERM =~ '-256color'
    set t_Co=256
@@ -29,15 +30,13 @@ endif
 " ---------------
 set ruler          " Ruler on
 set number         " Line numbers on
+set numberwidth=3
 set laststatus=2   " Always show the statusline
 set cmdheight=2    " Make the command area two lines high
-set cursorline     " Highlight current line
 set encoding=utf-8
 set noshowmode     " Don't show the mode since Powerline shows it
 set title          " Set the title of the window in the terminal to the file
-if exists('+colorcolumn')
-  set colorcolumn=80 " Color the 80th column differently as a wrapping guide.
-endif
+
 " Disable tooltips for hovering keywords in Vim
 if exists('+ballooneval')
   " This doesn't seem to stop tooltips for Ruby files
@@ -46,10 +45,12 @@ if exists('+ballooneval')
   set balloondelay=100000
 endif
 
+"Show (partial) command in the status line
+set showcmd
+
 " ---------------
 " Behaviors
 " ---------------
-syntax enable
 set backup             " Turn on backups
 set autoread           " Automatically reload changes if detected
 set wildmenu           " Turn on WiLd menu
@@ -81,8 +82,10 @@ set shiftwidth=2 " Tabs under smart indent
 set shiftround
 set cindent
 set autoindent
+set copyindent
 set smarttab
 set expandtab
+set tags=tags
 
 " ---------------
 " Searching
@@ -101,7 +104,7 @@ set wildignore+=*.o,*.obj,*.exe,*.so,*.dll,*.pyc,.svn,.hg,.bzr,.git,
 set showmatch   " Show matching brackets.
 set matchtime=2 " How many tenths of a second to blink
 " Show invisible characters
-set list
+set nolist
 
 " Show trailing spaces as dots and carrots for extended lines.
 " From Janus, http://git.io/PLbAlw
@@ -137,13 +140,3 @@ set complete=.,w,b,u,U
 let g:session_autoload="no"
 
 
-" powerline symbols
-let g:airline_symbols = {}
-
-let g:airline_left_sep = ''
-let g:airline_left_alt_sep = ''
-let g:airline_right_sep = ''
-let g:airline_right_alt_sep = ''
-let g:airline_symbols.branch = ''
-let g:airline_symbols.readonly = ''
-let g:airline_symbols.linenr = ''
