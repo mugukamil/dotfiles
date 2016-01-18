@@ -106,7 +106,7 @@
 	"show_panel_on_build": false,
 	"tab_size": 2,
 	"theme": "Material-Theme.sublime-theme",
-	"translate_tabs_to_spaces": true,
+	"translate_tabs_to_spaces": false,
 	"trim_trailing_white_space_on_save": false,
 	"use_simple_full_screen": true,
 	"vintage_ctrl_keys": true,

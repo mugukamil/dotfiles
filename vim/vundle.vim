@@ -10,6 +10,7 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'gmarik/vundle'
+Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'HelpClose'
 Plugin 'sk1418/Join'
 Plugin 'L9'
@@ -48,7 +49,6 @@ Plugin 'timcharper/textile.vim'
 Plugin 'mutewinter/tomdoc.vim'
 Plugin 'mbbill/undotree'
 Plugin 'tpope/vim-abolish'
-Plugin 'bling/vim-airline'
 Plugin 'osyo-manga/vim-anzu'
 Plugin 'mutewinter/vim-autoreadwatch'
 Plugin 'tpope/vim-bundler'
@@ -96,6 +96,7 @@ Plugin 'mattn/webapi-vim'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'w0ng/vim-hybrid'
 Plugin 'mustache/vim-mustache-handlebars'
+
 
 
 call vundle#end()

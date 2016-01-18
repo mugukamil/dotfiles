@@ -7,7 +7,6 @@
 " ---------------
 syntax enable
 colorscheme xoria256
-set guifont=menlo:h16
 " Force 256 color mode if available
 if $TERM =~ '-256color'
    set t_Co=256
@@ -30,7 +29,7 @@ endif
 " ---------------
 set ruler          " Ruler on
 set number         " Line numbers on
-set numberwidth=3
+set numberwidth=4
 set laststatus=2   " Always show the statusline
 set cmdheight=2    " Make the command area two lines high
 set encoding=utf-8
