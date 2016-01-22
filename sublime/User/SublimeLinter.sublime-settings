@@ -31,7 +31,7 @@
                 "excludes": []
             },
             "htmltidy": {
-                "@disable": false,
+                "@disable": true,
                 "args": [],
                 "excludes": []
             },

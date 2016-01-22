@@ -204,6 +204,8 @@
 			<dict>
 				<key>foreground</key>
 				<string>#6E9CBE</string>
+				<key>fontStyle</key>
+				<string>italic</string>
 			</dict>
 		</dict>
 		<dict>
