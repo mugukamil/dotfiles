@@ -25,7 +25,7 @@ PATH='/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin'
 export PATH
 
 
-export EDITOR='vim'
+export EDITOR='mvim'
 
 # Terminal title
 DISABLE_AUTO_TITLE="true"
