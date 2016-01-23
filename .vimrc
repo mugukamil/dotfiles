@@ -112,6 +112,7 @@ if has('gui_macvim')
   set guifont=menlo\ for\ powerline:h16
   set linespace=15
 
+
   " Hide Toolbar in MacVim
   if has('gui_running')
     set guioptions-=T
@@ -148,6 +149,8 @@ if $TERM =~ '-256color'
    set t_Co=256
 endif
 
+highlight CursorLine cterm=NONE ctermbg=NONE ctermfg=NONE guibg=NONE guifg=NONE
+set cursorline
 " -----------------------------
 " File Locations
 " -----------------------------
@@ -291,6 +294,10 @@ command! Q q
 " Restart Pow.cx for the Current App
 command! PowRestart :SilentCmd touch tmp/restart.txt; touch tmp/.livereload.rb
 command! Deploy :call VimuxRunCommand("mina deploy")
+
+" Remove search results
+command! H let @/=""
+
 
 " ----------------------------------------
 " Mappings
@@ -680,6 +687,7 @@ command! -range=% WordFrequency <line1>,<line2>call WordFrequency()
 " Auto Commands
 " ----------------------------------------
 
+
 if has('autocmd')
   augroup MyAutoCommands
     " Clear the auto command group so we don't define it multiple times
@@ -723,6 +731,9 @@ if has('autocmd')
     " from https://bitbucket.org/sjl/dotfiles/src/tip/vim/vimrc
     au VimResized * :wincmd =
 
+    autocmd cursorhold * set nohlsearch
+    autocmd cursormoved * set hlsearch
+
     "NERDTree and Startify working at startup
     autocmd VimEnter *
                 \   if !argc()
@@ -731,7 +742,5 @@ if has('autocmd')
                 \ |   wincmd w
                 \ | endif
 
-    autocmd cursorhold * set nohlsearch
-    autocmd cursormoved * set hlsearch
   augroup END
 endif
