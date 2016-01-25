@@ -1,104 +1,5 @@
-" All of the plugins are installed with Vundle from this file.
-" ----------------------------------------
-" Vundle
-" ----------------------------------------
-
-set nocompatible " be iMproved
-filetype off     " required!
-
-set runtimepath+=~/.vim/bundle/vundle/
-call vundle#begin()
-
-" let Vundle manage Vundle, required
-Plugin 'gmarik/vundle'
-Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
-Plugin 'HelpClose'
-Plugin 'sk1418/Join'
-Plugin 'L9'
-Plugin 'Valloric/ListToggle'
-Plugin 'Valloric/MatchTagAlways'
-Plugin 'yssl/QFEnter'
-Plugin 'ZoomWin'
-Plugin 'Townk/vim-autoclose'
-Plugin 'rking/ag.vim'
-Plugin 'msanders/cocoa.vim'
-Plugin 'Rykka/colorv.vim'
-Plugin 'chrisbra/csv.vim'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'Raimondi/delimitMate'
-Plugin 'dsawardekar/ember.vim'
-Plugin 'mattn/emmet-vim'
-Plugin 'mattn/gist-vim'
-Plugin 'othree/html5.vim'
-Plugin 'indenthtml.vim'
-Plugin 'nanotech/jellybeans.vim'
-Plugin 'matchit.zip'
-Plugin 'benekastah/neomake'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
-Plugin 'scrooloose/nerdtree'
-Plugin 'mutewinter/nginx.vim'
-Plugin 'tyru/open-browser.vim'
-Plugin 'dsawardekar/portkey'
-Plugin 'scratch.vim'
-Plugin 'ervandew/supertab'
-Plugin 'mutewinter/swap-parameters'
-Plugin 'AndrewRadev/switch.vim'
-Plugin 'godlygeek/tabular'
-Plugin 'mutewinter/taskpaper.vim'
-Plugin 'tomtom/tcomment_vim'
-Plugin 'timcharper/textile.vim'
-Plugin 'mutewinter/tomdoc.vim'
-Plugin 'mbbill/undotree'
-Plugin 'tpope/vim-abolish'
-Plugin 'osyo-manga/vim-anzu'
-Plugin 'mutewinter/vim-autoreadwatch'
-Plugin 'tpope/vim-bundler'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'hail2u/vim-css3-syntax'
-Plugin 'tpope/vim-cucumber'
-Plugin 'easymotion/vim-easymotion'
-Plugin 'tpope/vim-endwise'
-Plugin 'tpope/vim-eunuch'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-haml'
-Plugin 'nono/vim-handlebars'
-Plugin 'takac/vim-hardtime'
-Plugin 'nathanaelkane/vim-Indent-guides'
-Plugin 'honza/vim-snippets'
-Plugin 'digitaltoad/vim-jade'
-Plugin 'othree/javascript-libraries-syntax.vim'
-Plugin 'elzr/vim-json'
-Plugin 'mxw/vim-jsx'
-Plugin 'groenewege/vim-less'
-Plugin 'gabrielelana/vim-markdown'
-Plugin 'itspriddle/vim-marked'
-Plugin 'xolox/vim-misc'
-Plugin 'tpope/vim-rake'
-Plugin 'tpope/vim-repeat'
-Plugin 'henrik/vim-reveal-in-finder'
-Plugin 'ecomba/vim-ruby-refactoring'
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'xolox/vim-session'
-Plugin 'mhinz/vim-signify'
-Plugin 'mhinz/vim-startify'
-Plugin 'wavded/vim-stylus'
-Plugin 'tpope/vim-surround'
-Plugin 'nelstrom/vim-textobj-rubyblock'
-Plugin 'kana/vim-textobj-user'
-Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'mutewinter/vim-tmux'
-Plugin 'jc00ke/vim-tomdoc'
-Plugin 'jgdavey/vim-turbux'
-Plugin 'tpope/vim-unimpaired'
-Plugin 'nelstrom/vim-visual-star-search'
-Plugin 'papanikge/vim-voogle'
-Plugin 'benmills/vimux'
-Plugin 'mattn/webapi-vim'
-Plugin 'jelera/vim-javascript-syntax'
-Plugin 'w0ng/vim-hybrid'
-Plugin 'mustache/vim-mustache-handlebars'
-
-call vundle#end()
+" Load vundle.vim
+source ~/.vim/vundle.vim
 
 " Automatically detect file types. (must turn on after Vundle)
 filetype plugin indent on
@@ -108,32 +9,20 @@ filetype plugin indent on
 " ----------------------------------------
 " MacVim
 
-if has('gui_macvim')
-  set guifont=menlo\ for\ powerline:h16
-  set linespace=15
+colorscheme xoria256
+set guifont=menlo\ for\ powerline:h16
+set guioptions-=T
+set guioptions-=r
+set go-=L
+set fu
+set linespace=15
 
-
-  " Hide Toolbar in MacVim
-  if has('gui_running')
-    set guioptions-=T
-    set guioptions-=r
-    set go-=L
-    set fu
-  endif
-
- " Use option (alt) as meta key.
-  set macmeta
-endif
-
-if has('macunix') || has('mac')
-  " Fix meta key for Mac
-  let c='a'
-  while c <= 'z'
-    exec "set <A-".c.">=\e".c
-    exec "imap \e".c." <A-".c.">"
-    let c = nr2char(1+char2nr(c))
-  endw
-endif
+let c='a'
+while c <= 'z'
+  exec "set <A-".c.">=\e".c
+  exec "imap \e".c." <A-".c.">"
+  let c = nr2char(1+char2nr(c))
+endw
 
 " ---------------------------------------------
 " Regular Vim Configuration (No Plugins Needed)
@@ -143,7 +32,6 @@ endif
 " Color
 " ---------------
 syntax enable
-colorscheme xoria256
 " Force 256 color mode if available
 if $TERM =~ '-256color'
    set t_Co=256
@@ -214,16 +102,16 @@ set switchbuf=useopen  " Switch to an existing buffer if one exists
 " ---------------
 " Text Format
 " ---------------
-set tabstop=2
-set backspace=indent,eol,start " Delete everything with backspace
-set shiftwidth=2 " Tabs under smart indent
+set tabstop=4
+set smarttab
+set tags=tags
+set softtabstop=4
+set expandtab
+set shiftwidth=4 " Tabs under smart indent
 set shiftround
-set cindent
+set backspace=indent,eol,start " Delete everything with backspace
 set autoindent
 set copyindent
-set smarttab
-set expandtab
-set tags=tags
 
 " ---------------
 " Searching
@@ -306,7 +194,7 @@ command! H let @/=""
 " Set leader to ,
 " Note: This line MUST come before any <leader> mappings
 let mapleader=','
-let maplocalleader = ' '
+let g:mapleader = ','
 
 " -----------------------
 " Unmapped While Learning
@@ -687,60 +575,56 @@ command! -range=% WordFrequency <line1>,<line2>call WordFrequency()
 " Auto Commands
 " ----------------------------------------
 
+augroup MyAutoCommands
+  " Clear the auto command group so we don't define it multiple times
+  " Idea from http://learnvimscriptthehardway.stevelosh.com/chapters/14.html
+  autocmd!
+  " No formatting on o key newlines
+  autocmd BufNewFile,BufEnter * set formatoptions-=o
 
-if has('autocmd')
-  augroup MyAutoCommands
-    " Clear the auto command group so we don't define it multiple times
-    " Idea from http://learnvimscriptthehardway.stevelosh.com/chapters/14.html
-    autocmd!
-    " No formatting on o key newlines
-    autocmd BufNewFile,BufEnter * set formatoptions-=o
+  " No more complaining about untitled documents
+  autocmd FocusLost silent! :wa
 
-    " No more complaining about untitled documents
-    autocmd FocusLost silent! :wa
+  " When editing a file, always jump to the last cursor position.
+  " This must be after the uncompress commands.
+  autocmd BufReadPost *
+        \ if line("'\"") > 1 && line ("'\"") <= line("$") |
+        \   exe "normal! g`\"" |
+        \ endif
 
-    " When editing a file, always jump to the last cursor position.
-    " This must be after the uncompress commands.
-    autocmd BufReadPost *
-          \ if line("'\"") > 1 && line ("'\"") <= line("$") |
-          \   exe "normal! g`\"" |
-          \ endif
+  " Fix trailing whitespace in my most used programming langauges
+  autocmd BufWritePre *.py,*.coffee,*.rb,*.erb,*.md,*.scss,*.vim,Cakefile,
+        \*.hbs
+        \ silent! :StripTrailingWhiteSpace
 
-    " Fix trailing whitespace in my most used programming langauges
-    autocmd BufWritePre *.py,*.coffee,*.rb,*.erb,*.md,*.scss,*.vim,Cakefile,
-          \*.hbs
-          \ silent! :StripTrailingWhiteSpace
+  " Help mode bindings
+  " <enter> to follow tag, <bs> to go back, and q to quit.
+  " From http://ctoomey.com/posts/an-incremental-approach-to-vim/
+  autocmd filetype help nnoremap <buffer><cr> <c-]>
+  autocmd filetype help nnoremap <buffer><bs> <c-T>
+  autocmd filetype help nnoremap <buffer>q :q<CR>
 
-    " Help mode bindings
-    " <enter> to follow tag, <bs> to go back, and q to quit.
-    " From http://ctoomey.com/posts/an-incremental-approach-to-vim/
-    autocmd filetype help nnoremap <buffer><cr> <c-]>
-    autocmd filetype help nnoremap <buffer><bs> <c-T>
-    autocmd filetype help nnoremap <buffer>q :q<CR>
+  " Fix accidental indentation in html files
+  " from http://morearty.com/blog/2013/01/22/fixing-vims-indenting-of-html-files.html
+  autocmd FileType html setlocal indentkeys-=*<Return>
 
-    " Fix accidental indentation in html files
-    " from http://morearty.com/blog/2013/01/22/fixing-vims-indenting-of-html-files.html
-    autocmd FileType html setlocal indentkeys-=*<Return>
+  " Leave the return key alone when in command line windows, since it's used
+  " to run commands there.
+  autocmd! CmdwinEnter * :unmap <cr>
+  autocmd! CmdwinLeave * :call MapCR()
 
-    " Leave the return key alone when in command line windows, since it's used
-    " to run commands there.
-    autocmd! CmdwinEnter * :unmap <cr>
-    autocmd! CmdwinLeave * :call MapCR()
+  " Resize splits when the window is resized
+  " from https://bitbucket.org/sjl/dotfiles/src/tip/vim/vimrc
+  au VimResized * :wincmd =
 
-    " Resize splits when the window is resized
-    " from https://bitbucket.org/sjl/dotfiles/src/tip/vim/vimrc
-    au VimResized * :wincmd =
+  autocmd cursorhold * set nohlsearch
 
-    autocmd cursorhold * set nohlsearch
-    autocmd cursormoved * set hlsearch
+  "NERDTree and Startify working at startup
+  autocmd VimEnter *
+        \   if !argc()
+        \ |   Startify
+        \ |   NERDTree
+        \ |   wincmd w
+        \ | endif
 
-    "NERDTree and Startify working at startup
-    autocmd VimEnter *
-                \   if !argc()
-                \ |   Startify
-                \ |   NERDTree
-                \ |   wincmd w
-                \ | endif
-
-  augroup END
-endif
+augroup END
