@@ -62,7 +62,7 @@
 	"font_options":
 	[
 	],
-	"font_size": 15,
+	"font_size": 14.5,
 	"gpu_window_buffer": "true",
 	"gutter": true,
 	"hayaku_CSS_colors_case": "lowercase",
