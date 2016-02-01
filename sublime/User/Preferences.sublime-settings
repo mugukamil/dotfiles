@@ -1,4 +1,5 @@
 {
+	"auto_complete_selector": "source - comment, meta.tag - punctuation.definition.tag.begin",
 	"bold_folder_labels": true,
 	"caret_extra_bottom": 0,
 	"caret_extra_top": 0,
