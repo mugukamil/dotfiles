@@ -94,7 +94,7 @@
 	"match_brackets": true,
 	"match_brackets_angle": true,
 	"material_theme_compact_sidebar": true,
-	"material_theme_small_statusbar": false,
+	"material_theme_small_statusbar": true,
 	"material_theme_small_tab": true,
 	"move_to_limit_on_up_down": false,
 	"open_files_in_new_window": false,
