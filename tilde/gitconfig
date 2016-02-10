@@ -1,3 +1,12 @@
 [user]
 	email = mugukamil@gmail.com
 	name = mugukamil
+[core]
+	excludesfile = ~/.gitignore
+	attributesfile = ~/.gitattributes
+	# insanely beautiful diffs
+	pager = diff-highlight | diff-so-fancy | less -r
+	
+# so much color
+[color]
+	ui = always
