@@ -60,7 +60,7 @@ ZSH_THEME="squirrelbook"
 # The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 HIST_STAMPS="dd.mm.yyyy"
 # Custom custom folder
-ZSH_CUSTOM="$HOME/dotfiles/zsh"
+ZSH_CUSTOM="$HOME/Dropbox/DOTFILES/zsh"
 # Plugins (see ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 plugins=(git autojump coffee npm sublime osx brew extract git-extras git-flow thefuck vagrant)
