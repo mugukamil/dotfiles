@@ -1,0 +1,45 @@
+# Numerous always-ignore extensions
+*.diff
+*.err
+*.orig
+*.log
+*.rej
+*.swo
+*.swp
+*.zip
+*.vi
+
+# Python stuff
+*.pyc
+VENV
+
+# OS or Editor folders
+.DS_Store
+Desktop.ini
+._*
+Thumbs.db
+.cache
+.settings
+.project
+.tmproj
+*.esproj
+nbproject
+*.sublime-project
+*.sublime-workspace
+.idea
+
+# Folders to ignore
+.sass-cache
+.tmp
+
+# Files that might appear on external disks
+.Spotlight-V100
+.Trashes
+
+# Installed npm modules
+node_modules
+npm-debug.log
+
+# Installed Bower packages
+bower_components
+

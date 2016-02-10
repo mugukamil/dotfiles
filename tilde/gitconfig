@@ -1,0 +1,20 @@
+[user]
+	email = mugukamil@gmail.com
+	name = mugukamil
+[core]
+	excludesfile = ~/.gitignore
+	attributesfile = ~/.gitattributes
+	# insanely beautiful diffs
+	pager = diff-highlight | diff-so-fancy | less -r
+	
+# so much color
+[color]
+	ui = always
+
+# correct typos
+[help]
+	autocorrect = 1
+
+# push easily. http://stackoverflow.com/a/23918418/89484
+[push]
+	default = current

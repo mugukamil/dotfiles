@@ -1,0 +1,142 @@
+#!/usr/bin/env bash
+
+# Releases the next version of the product to npm or Bower
+# 
+# Usage:
+#   release <major|minor|patch>
+#   release <VERSION> --force
+#
+# Requires:
+# - semver - https://github.com/sekati/semver
+# - jq - brew install jq
+# - github-release-from-changelog - npm i -g github-release-from-changelog
+#
+# Author: Artem Sapegin, sapegin.me
+# License: MIT
+# https://github.com/sapegin/dotfiles
+#
+
+# Common stuff
+RED="$(tput setaf 1)"
+CYAN="$(tput setaf 6)"
+UNDERLINE="$(tput sgr 0 1)"
+NOCOLOR="$(tput sgr0)"
+function header() { echo -e "$UNDERLINE$CYAN$1$NOCOLOR\n"; }
+function error() { echo -e "$UNDERLINE$RED$1$NOCOLOR\n"; }
+
+function usage() {
+	echo "Usage:"
+	echo "  `basename $0` <major|minor|patch>"
+	echo "  `basename $0` <VERSION> --force"
+	echo
+}
+
+command -v semver >/dev/null 2>&1 || { error "semver not installed: see comments for instructions."; exit 1; }
+command -v jq >/dev/null 2>&1 || { error "jq not installed: see comments for instructions."; exit 1; }
+command -v github-release-from-changelog >/dev/null 2>&1 || { error "github-release-from-changelog not installed: see comments for instructions."; exit 1; }
+
+if [ -z "$1" ]; then
+	usage
+	exit 1
+fi
+
+# Dirty repo?
+if [ "$(git status --porcelain 2>/dev/null)" ]; then
+	error "Repo is dirty."
+	echo "Commit changes before continue."
+	echo
+	git status
+	exit 1
+fi
+
+# Read existing versions
+cmpnt_ver=$(find . -maxdepth 1 -name "bower.json" | xargs cat | jq -r ".version")
+pkg_ver=$(find . -maxdepth 1 -name "package.json" | xargs cat | jq -r ".version")
+
+# Non npm package 
+[ "$pkg_ver" == "0.0.0" ] && pkg_ver=
+
+# Verify current versions 
+current_ver=
+[ -n "$cmpnt_ver" ] && current_ver="$cmpnt_ver"
+[ -n "$pkg_ver" ] && current_ver="$pkg_ver"
+[ -z "$current_ver" ] && current_ver="0.0.0"
+
+# Validate current versions and determine new version
+dontmatch() {
+	error "Current versions don’t match."
+	if [ -n "$cmpnt_ver" ] && [ "$cmpnt_ver" != "0.0.0" ]; then echo "bower.json: $CYAN$cmpnt_ver$NOCOLOR"; fi
+	if [ -n "$pkg_ver" ] && [ "$pkg_ver" != "0.0.0" ]; then echo "package.json: $CYAN$pkg_ver$NOCOLOR"; fi
+	exit 1
+}
+if [ "$1" == "major" ] || [ "$1" == "minor" ] || [ "$1" == "patch" ]; then
+	if [ -n "$cmpnt_ver" ] && [ "$cmpnt_ver" != "0.0.0" ] && [ "$current_ver" != "$cmpnt_ver" ]; then dontmatch; fi
+	if [ -n "$pkg_ver" ] && [ "$pkg_ver" != "0.0.0" ] && [ "$current_ver" != "$pkg_ver" ]; then dontmatch; fi
+else
+	if [ "$2" != "--force" ]; then
+		error "Custom versions possible only with --force key."
+		usage
+		exit 1
+	fi
+	new_ver="$1"
+fi
+if [ -z "$new_ver" ]; then
+	[ "$1" == "patch" ] && new_ver=$(semver -p $current_ver)
+	[ "$1" == "minor" ] && new_ver=$(semver -n $current_ver)
+	[ "$1" == "major" ] && new_ver=$(semver -m $current_ver)
+fi
+
+header "Releasing v$new_ver..."
+
+# Update bower.json
+if [ -n "$cmpnt_ver" ]; then
+	jq ".version = \"$new_ver\"" bower.json > bower.json_
+	rm bower.json
+	mv bower.json_ bower.json
+fi
+
+# Update package.json
+if [ -n "$pkg_ver" ]; then
+	jq ".version = \"$new_ver\"" package.json > package.json_
+	rm package.json
+	mv package.json_ package.json
+fi
+
+# Build and run tests
+status=0
+if [ -f Gruntfile.* ] || [ -f src/Gruntfile.* ]; then
+	if [ -f Gruntfile.* ]; then
+		grunt build
+		status=$?
+	elif [ -f src/Gruntfile.* ]; then
+		pushd src
+		grunt build
+		status=$?
+		popd
+	fi
+elif [ -f package.json ]; then
+	npm test
+	status=$?
+fi
+
+# Revert changes and exit if build/tests failed
+if [ $status -ne 0 ]; then
+	git reset --hard
+	exit 1
+fi
+
+# Commit changed files
+git commit -am "v$new_ver"
+
+# Push everything
+git push origin
+
+# Publish npm package
+if [ -n "$pkg_ver" ]; then
+	npm publish
+fi
+
+# Publish release notes to GitHub
+github-release-from-changelog --filename Changelog.md
+
+echo "Done."
