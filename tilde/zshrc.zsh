@@ -19,7 +19,7 @@ PATH='/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin'
 [ -d /usr/local/opt/ruby/bin ] && _prepend_path "/usr/local/opt/ruby/bin"
 [ -d /usr/local/share/npm/bin ] && _prepend_path "/usr/local/share/npm/bin"
 [ -d /usr/local/opt/coreutils/libexec/gnubin ] && _prepend_path "/usr/local/opt/coreutils/libexec/gnubin"
-[ -d ~/dotfiles/bin ] && _prepend_path "$HOME/dotfiles/bin"
+[ -d ~/dotfiles/bin ] && _prepend_path "$HOME/Dropbox/DOTFILES/bin"
 [ -d ~/bin ] && _prepend_path "$HOME/bin"
 [ -d ~/.composer/vendor/bin ] && _prepend_path "$HOME/.composer/vendor/bin"
 export PATH
