@@ -31,7 +31,7 @@ brew install hub
 sudo bash < <( curl https://raw.githubusercontent.com/jamiew/git-friendly/master/install.sh)
 
 # Extend global $PATH
-echo -e "setenv PATH $HOME/dotfiles/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin" | sudo tee /etc/launchd.conf
+echo -e "setenv PATH $HOME/Dropbox/DOTFILES/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin" | sudo tee /etc/launchd.conf
 
 # Everything else
 brew install the_silver_searcher

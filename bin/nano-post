@@ -62,7 +62,7 @@ title=$(grep -m 1 '#' "$source_file" | sed -e 's^# ^^')
 date=$(date +"$DATE_FORMAT")
 
 # Copy template and source file to destination folder
-sed -e "s^{title}^$title^" -e "s^{date}^$date^" ~/dotfiles/bin/nano-post.tmpl > "$dest"
+sed -e "s^{title}^$title^" -e "s^{date}^$date^" ~/Dropbox/DOTFILES/bin/nano-post.tmpl > "$dest"
 cat "$source_file" | perl -0pe 's/#.*\n//' >> "$dest"
 
 # Open the file in Sublime Text

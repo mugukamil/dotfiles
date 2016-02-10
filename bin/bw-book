@@ -60,7 +60,7 @@ jpegtran -copy none -optimize -progressive "$DEST.tmp" > "$DEST"
 rm -f "$DEST.tmp"
 
 # Add new book to a page from a template
-sed -e "s^{slug}^$SLUG^" -e "s^{year}^$YEAR^" ~/dotfiles/bin/bw-book.tmpl > "$PAGE.tmp"
+sed -e "s^{slug}^$SLUG^" -e "s^{year}^$YEAR^" ~/Dropbox/DOTFILES/bin/bw-book.tmpl > "$PAGE.tmp"
 cat "$PAGE" >> "$PAGE.tmp"
 rm -f "$PAGE"
 mv "$PAGE.tmp" "$PAGE"

@@ -12,10 +12,10 @@ echo
 
 # Dotfiles
 header "Updating dotfiles..."
-pushd "$HOME/dotfiles"
+pushd "$HOME/Dropbox/dotfiles"
 git pull
 ./sync.py
-source "$HOME/.bashrc"
+source "$HOME/.zshrc"
 popd
 echo
 

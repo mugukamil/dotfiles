@@ -16,20 +16,19 @@ alias chromium="open -a chromium"
 alias vaprobash="curl -L http://bit.ly/vaprobash > Vagrantfile"
 alias lamp="curl -L -o 'install.sh' http://bit.ly/1hBfq57 && curl -L -o 'Vagrantfile' http://bit.ly/1mE3Qt9 && vagrant up"
 alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
-alias ios="/Applications/Xcode.app/Contents/Developer/Applications/iOS\ Simulator.app/Contents/MacOS/iOS\ Simulator"
+alias ios="/Applications/Xcode.app/Contents/Developer/Applications/iOS\ Simulator.app/Contents/MacOS/Simulator"
 alias o="open"
 alias oo="open ."
 alias e="$EDITOR"
 alias x+="chmod +x"
 alias -- +x="chmod +x"
 alias get="curl -O -L"
-alias vaprobash="curl -L http://bit.ly/vaprobash > Vagrantfile"
 
 # git root
 alias gr='[ ! -z `git rev-parse --show-cdup` ] && cd `git rev-parse --show-cdup || pwd`'
 
 # Magic project Opener
-repo() { cd "$("$HOME/dotfiles/bin/repo" $1)"; }
+repo() { cd "$("$HOME/Dropbox/DOTFILES/bin/repo" $1)"; }
 
 # My IP
 alias myip="ifconfig | grep 'inet' | grep -v 127.0.0.1 | awk '{print \$2}'"

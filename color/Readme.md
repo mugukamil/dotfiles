@@ -1,6 +1,6 @@
 # Squirrelsong Terminal Color Scheme
 
-![Terminal.app](https://raw.github.com/sapegin/dotfiles/master/color/squirrelsong_terminal.png)
+![iTerm.app](screen.png?raw=true)
 
 Inspired by [Earthsong](https://github.com/daylerees/colour-schemes/blob/master/README.md#earthsong) Sublime Text scheme by [Dayle Rees](https://github.com/daylerees).
 
