@@ -74,6 +74,9 @@ endif
 "Show (partial) command in the status line
 "set showcmd
 
+" Powerline
+let g:Powerline_symbols = 'fancy'
+
 " ---------------
 " Behaviors
 " ---------------
@@ -204,6 +207,9 @@ let g:mapleader = ','
 noremap ^ <nop>
 noremap $ <nop>
 nnoremap <leader>sc <nop>
+
+" Easy edit vimrc file
+nmap <leader>ev :tabedit $MYVIMRC<cr>
 
 " ---------------
 " Regular Mappings
@@ -490,29 +496,6 @@ nnoremap <silent> <leader>p :PasteWithPasteMode<CR>
 " Writes the current buffer if it's needed, unless we're the in QuickFix mode.
 " ---------------
 
-function WriteBufferIfNecessary()
-  if &modified && !&readonly
-    :write
-  endif
-endfunction
-command! WriteBufferIfNecessary call WriteBufferIfNecessary()
-
-function CRWriteIfNecessary()
-  if &filetype == "qf"
-    " Execute a normal enter when in Quickfix list.
-    execute "normal! \<enter>"
-  else
-    WriteBufferIfNecessary
-  endif
-endfunction
-
-" Clear the search buffer when hitting return
-" Idea for MapCR from http://git.io/pt8kjA
-function! MapCR()
-  nnoremap <silent> <enter> :call CRWriteIfNecessary()<CR>
-endfunction
-call MapCR()
-
 " ---------------
 " Make a scratch buffer with all of the leader keybindings.
 "
@@ -627,4 +610,10 @@ augroup MyAutoCommands
         \ |   wincmd w
         \ | endif
 
+augroup END
+
+"Automatically source the Vimrc file on save.
+augroup autosourcing
+	autocmd!
+	autocmd BufWritePost .vimrc source %
 augroup END
