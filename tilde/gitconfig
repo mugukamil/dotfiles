@@ -10,3 +10,11 @@
 # so much color
 [color]
 	ui = always
+
+# correct typos
+[help]
+	autocorrect = 1
+
+# push easily. http://stackoverflow.com/a/23918418/89484
+[push]
+	default = current
