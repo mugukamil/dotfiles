@@ -1,6 +1,6 @@
 # mugukamil's dotfiles
 
-![Terminal.app](https://raw.github.com/sapegin/dotfiles/master/color/squirrelsong_terminal.png)
+![iTerm.app](color/screen.png?raw=true)
 
 
 ## Features
