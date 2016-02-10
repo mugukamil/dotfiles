@@ -2,7 +2,11 @@
 
 """
 Dotfiles syncronization.
+<<<<<<< HEAD
 Makes symlinks for all files: ~/Dropbox/DOTFILES/tilde/zshrc.zsh => ~/.zshrc.
+=======
+Makes symlinks for all files: ~/dotfiles/tilde/bashrc.bash => ~/.bashrc.
+>>>>>>> 1c051478455fac01467340794c10db4c07951afd
 Based on https://gist.github.com/490016
 """
 
@@ -10,7 +14,11 @@ import os
 import glob
 import shutil
 
+<<<<<<< HEAD
 SOURCE_DIR = '~/Dropbox/DOTFILES/tilde'
+=======
+SOURCE_DIR = '~/dotfiles/tilde'
+>>>>>>> 1c051478455fac01467340794c10db4c07951afd
 EXCLUDE = []
 NO_DOT_PREFIX = []
 PRESERVE_EXTENSION = []
