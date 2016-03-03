@@ -1,4 +1,4 @@
-alias zsh='vim ~/.zshrc'
+alias zshrc='vim ~/.zshrc'
 alias c='clear'
 alias v=vim
 alias mysql=/Applications/MAMP/Library/bin/mysql
@@ -9,20 +9,22 @@ alias ips="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
 alias cleanup="find . -name '*.DS_Store' -type f -ls -delete"
 alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; rm -rfv ~/.Trash"
 alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; npm update npm -g; npm update -g; sudo gem update --system; sudo gem update'
+
+# BROWSERS
 alias safari="open -a safari"
 alias firefox="open -a firefox"
 alias opera="open -a opera"
 alias chromium="open -a chromium"
+alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
+
 alias vaprobash="curl -L http://bit.ly/vaprobash > Vagrantfile"
 alias lamp="curl -L -o 'install.sh' http://bit.ly/1hBfq57 && curl -L -o 'Vagrantfile' http://bit.ly/1mE3Qt9 && vagrant up"
-alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
 alias ios="/Applications/Xcode.app/Contents/Developer/Applications/iOS\ Simulator.app/Contents/MacOS/Simulator"
 alias o="open"
 alias oo="open ."
 alias e="$EDITOR"
 alias x+="chmod +x"
 alias -- +x="chmod +x"
-alias get="curl -O -L"
 
 # git root
 alias gr='[ ! -z `git rev-parse --show-cdup` ] && cd `git rev-parse --show-cdup || pwd`'
@@ -58,7 +60,7 @@ function f() {
 
 
 # List all files, long format, colorized, permissions in octal
-function la() {
+function laf() {
  	ls -l  "$@" | awk '
     {
       k=0;
