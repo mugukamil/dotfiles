@@ -65,3 +65,5 @@ ZSH_CUSTOM="$HOME/Dropbox/DOTFILES/zsh"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 plugins=(git autojump coffee npm sublime osx brew extract git-extras git-flow thefuck vagrant)
 source $ZSH/oh-my-zsh.sh
+
+[[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh ]]

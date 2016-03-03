@@ -6,10 +6,19 @@
 	attributesfile = ~/.gitattributes
 	# insanely beautiful diffs
 	pager = diff-highlight | diff-so-fancy | less -r
+    editor = mvim
 	
 # so much color
 [color]
 	ui = always
+    diff = auto
+    status = auto
+    branch = auto
+    interactive = auto
+    ui = auto
+
+[gc]
+    auto = 1
 
 # correct typos
 [help]
