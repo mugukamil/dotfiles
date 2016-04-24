@@ -1,10 +1,10 @@
 alias zshrc='vim ~/.zshrc'
 alias c='clear'
 alias v=vim
-alias mysql=/Applications/MAMP/Library/bin/mysql
+#alias mysql=/Applications/MAMP/Library/bin/mysql
 alias hosts='sudo $EDITOR /etc/hosts'
 alias ccc='pygmentize -O style=monokai -f console256 -g'
-alias ip='dig +short myip.opendns.com @resolver1.opendns.com'
+alias ip='curl --silent http://icanhazip.com'
 alias ips="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
 alias cleanup="find . -name '*.DS_Store' -type f -ls -delete"
 alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; rm -rfv ~/.Trash"
