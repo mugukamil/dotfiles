@@ -1,14 +1,15 @@
 alias zshrc='vim ~/.zshrc'
-alias c='clear'
 alias v=vim
-#alias mysql=/Applications/MAMP/Library/bin/mysql
+alias aliaseszsh='mvim ~/Dropbox/DOTFILES/zsh/aliases.zsh'
+alias mysqlmamp=/Applications/MAMP/Library/bin/mysql
 alias hosts='sudo $EDITOR /etc/hosts'
-alias ccc='pygmentize -O style=monokai -f console256 -g'
-alias ip='curl --silent http://icanhazip.com'
+alias ccat='pygmentize -O style=monokai -f console256 -g'
 alias ips="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
 alias cleanup="find . -name '*.DS_Store' -type f -ls -delete"
 alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; rm -rfv ~/.Trash"
-alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; npm update npm -g; npm update -g; sudo gem update --system; sudo gem update'
+alias update="sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; npm update npm -g; npm update -g; sudo gem update --system; sudo gem update"
+alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+alias sshkey="cat ~/.ssh/id_rsa.pub | pbcopy && echo 'Copied to clipboard.'"
 
 # BROWSERS
 alias safari="open -a safari"
@@ -16,6 +17,8 @@ alias firefox="open -a firefox"
 alias opera="open -a opera"
 alias chromium="open -a chromium"
 alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
+alias chromef="chrome --allow-file-access-from-files"
+
 
 alias vaprobash="curl -L http://bit.ly/vaprobash > Vagrantfile"
 alias lamp="curl -L -o 'install.sh' http://bit.ly/1hBfq57 && curl -L -o 'Vagrantfile' http://bit.ly/1mE3Qt9 && vagrant up"
@@ -24,7 +27,6 @@ alias o="open"
 alias oo="open ."
 alias e="$EDITOR"
 alias x+="chmod +x"
-alias -- +x="chmod +x"
 
 # git root
 alias gr='[ ! -z `git rev-parse --show-cdup` ] && cd `git rev-parse --show-cdup || pwd`'
@@ -42,10 +44,6 @@ alias get="curl -O -L"
 for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
   alias "$method"="lwp-request -m '$method'"
 done
-
-# Grunt
-alias gw="grunt watch --stack --debug"
-alias gww="grunt browserSync watch --stack --debug"
 
 # Tamia generator
 tm() { yo tamia:$@; }
@@ -86,3 +84,4 @@ function gifify() {
   fi
 }
 
+ctags=/usr/local/bin/ctags
