@@ -16,17 +16,75 @@ brew upgrade --all
 
 # GNU core utilities (those that come with OS X are outdated)
 brew install coreutils
+# Install some other useful utilities like `sponge`.
+brew install moreutils
+# Install GNU `sed`, overwriting the built-in `sed`.
+brew install gnu-sed --with-default-names
 # GNU `find`, `locate`, `updatedb`, and `xargs`, g-prefixed
 brew install findutils
-brew install tree
 
 # More recent versions of some OS X tools
 brew tap homebrew/dupes
 brew install homebrew/dupes/grep
+brew install homebrew/dupes/openssh
+brew install homebrew/dupes/screen
+
+# Install font tools.
+brew tap bramstein/webfonttools
+brew install sfnt2woff
+brew install sfnt2woff-zopfli
+brew install woff2
+
+# Install some CTF tools; see https://github.com/ctfs/write-ups.
+brew install aircrack-ng
+brew install bfg
+brew install binutils
+brew install binwalk
+brew install cifer
+brew install dex2jar
+brew install dns2tcp
+brew install fcrackzip
+brew install foremost
+brew install hashpump
+brew install hydra
+brew install john
+brew install knock
+brew install netpbm
+brew install nmap
+brew install pngcheck
+brew install socat
+brew install sqlmap
+brew install tcpflow
+brew install tcpreplay
+brew install tcptrace
+brew install ucspi-tcp # `tcpserver` etc.
+brew install xpdf
+brew install xz
+
+# Install other useful binaries.
+brew install ack
+brew install dark-mode
+#brew install exiv2
+brew install imagemagick --with-webp
+brew install lua
+brew install lynx
+brew install p7zip
+brew install pigz
+brew install pv
+brew install rename
+brew install rhino
+brew install speedtest_cli
+brew install ssh-copy-id
+brew install testssl
+brew install tree
+brew install vbindiff
+brew install webkit2png
+brew install zopfli
 
 # Git
 brew install git
 brew install git-extras
+brew install git-lfs
 brew install hub
 sudo bash < <( curl https://raw.githubusercontent.com/jamiew/git-friendly/master/install.sh)
 
@@ -55,6 +113,7 @@ brew install casperjs
 npm config set loglevel warn
 npm config set save-prefix '~'
 npm install -g grunt-cli
+npm install -g gulp
 npm install -g yo
 npm install -g jshint
 npm install -g jscs

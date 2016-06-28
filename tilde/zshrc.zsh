@@ -25,8 +25,6 @@ PATH='/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin'
 [ -d ~/.composer/vendor/bin ] && _prepend_path "$HOME/.composer/vendor/bin"
 export PATH
 
-export PATH=/usr/local/php5/bin:$PATH
-
 export EDITOR='mvim'
 
 # Homebrew install badge: beer sucks, coffee rules

@@ -12,7 +12,7 @@ echo
 
 # Dotfiles
 header "Updating dotfiles..."
-pushd "$HOME/Dropbox/dotfiles"
+pushd "$HOME/Dropbox/DOTFILES"
 git pull
 ./sync.py
 source "$HOME/.zshrc"
