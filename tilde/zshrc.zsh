@@ -1,6 +1,7 @@
 # Locale
 export LC_ALL=en_US.UTF-8
 export LANG="en_US"
+export VAGRANT_HOME="/Volumes/1TB/Cloud Mail.Ru/App Data/.vagrant.d"
 
 # Do not overwrite files when redirecting using ">". Note that you can still override this with ">|"
 set -o noclobber
@@ -34,7 +35,7 @@ export HOMEBREW_INSTALL_BADGE='☕'
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 # Theme.
-ZSH_THEME="cloud"
+ZSH_THEME="cloud-mod"
 # Uncomment the following line to use hyphen-insensitive completion. Case
 # sensitive completion must be off. _ and - will be interchangeable.
 # HYPHEN_INSENSITIVE="true"
@@ -49,7 +50,7 @@ HIST_STAMPS="dd.mm.yyyy"
 ZSH_CUSTOM="$HOME/Dropbox/DOTFILES/zsh"
 # Plugins (see ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-plugins=(brew bower cake catimg command-not-found composer common-aliases encode64 jsontools tmux git autojump coffee npm osx sublime extract colored-man-pages emoji-clock colorize git-extras git-flow thefuck vagrant zsh-syntax-highlighting)
+plugins=(brew catimg command-not-found composer common-aliases encode64 jsontools tmux git gitfast autojump npm osx sublime extract colored-man-pages emoji-clock git-extras git-flow thefuck vagrant zsh-syntax-highlighting zsh-autosuggestions)
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor root)
 source $ZSH/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $ZSH/oh-my-zsh.sh
@@ -67,3 +68,15 @@ fancy-ctrl-z () {
 }
 zle -N fancy-ctrl-z
 bindkey '^Z' fancy-ctrl-z
+
+ulimit -S -n 2048
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f /Users/mugukamil/Desktop/google-cloud-sdk/path.zsh.inc ]; then
+  source '/Users/mugukamil/Desktop/google-cloud-sdk/path.zsh.inc'
+fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f /Users/mugukamil/Desktop/google-cloud-sdk/completion.zsh.inc ]; then
+  source '/Users/mugukamil/Desktop/google-cloud-sdk/completion.zsh.inc'
+fi

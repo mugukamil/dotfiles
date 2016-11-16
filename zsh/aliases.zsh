@@ -1,18 +1,49 @@
-alias zshrc='vim ~/.zshrc'
-alias v=vim
+alias zshrc='v ~/.zshrc'
+
+alias shitcommit='git commit -m "💩"'
+
+alias mv='mv -v'
+alias cp='cp -v'
+alias ls='ls -G --color'
+
+alias v=mvim
+
+alias nconf='mvim /usr/local/etc/nginx/nginx.conf'
+
 alias aliaseszsh='mvim ~/Dropbox/DOTFILES/zsh/aliases.zsh'
+
 alias mysqlmamp=/Applications/MAMP/Library/bin/mysql
+
 alias hosts='sudo $EDITOR /etc/hosts'
+
+alias getwp='get https://wordpress.org/latest.tar.gz && tar -xzf latest.tar.gz'
+
+# Colorful cat
 alias ccat='pygmentize -O style=monokai -f console256 -g'
+
 alias ips="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
+
 alias cleanup="find . -name '*.DS_Store' -type f -ls -delete"
+
 alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; rm -rfv ~/.Trash"
-alias update="sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; npm update npm -g; npm update -g; sudo gem update --system; sudo gem update"
+
+# Update
+alias update="brew update; brew upgrade; brew cleanup; npm update npm -g; npm update -g; sudo gem update --system; sudo gem update"
+
+# Fancy git log
 alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+
+# Generate and copy sshkey
 alias sshkey="cat ~/.ssh/id_rsa.pub | pbcopy && echo 'Copied to clipboard.'"
 
 # Flush Directory Service cache
 alias flush="dscacheutil -flushcache && killall -HUP mDNSResponder"
+
+# File Size
+alias fs="stat -f \"%z bytes\""
+
+# Download file
+alias get="curl -O -L"
 
 # Clean up LaunchServices to remove duplicates in the “Open With” menu
 alias lscleanup="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user && killall Finder"
@@ -35,7 +66,6 @@ alias lamp="curl -L -o 'install.sh' http://bit.ly/1hBfq57 && curl -L -o 'Vagrant
 alias ios="/Applications/Xcode.app/Contents/Developer/Applications/iOS\ Simulator.app/Contents/MacOS/Simulator"
 alias o="open"
 alias oo="open ."
-alias e="$EDITOR"
 alias x+="chmod +x"
 
 # git root
@@ -44,12 +74,6 @@ alias gr='[ ! -z `git rev-parse --show-cdup` ] && cd `git rev-parse --show-cdup 
 # Magic project Opener
 repo() { cd "$("$HOME/Dropbox/DOTFILES/bin/repo" $1)"; }
 
-# My IP
-alias myip="ifconfig | grep 'inet' | grep -v 127.0.0.1 | awk '{print \$2}'"
-
-# Download file
-alias get="curl -O -L"
-
 # HTTP Request
 for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
   alias "$method"="lwp-request -m '$method'"
@@ -57,9 +81,6 @@ done
 
 # Tamia generator
 tm() { yo tamia:$@; }
-
-# File Size
-alias fs="stat -f \"%z bytes\""
 
 # find shorthand
 function f() {
@@ -81,8 +102,6 @@ alias chromekill="ps ux | grep '[C]hrome Helper --type=renderer' | grep -v exten
 # Lock the screen (when going AFK)
 alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
 
-
-
 # Create a git.io short URL
 function gitio() {
 	if [ -z "${1}" -o -z "${2}" ]; then
@@ -100,7 +119,6 @@ function phpserver() {
 	sleep 1 && open "http://${ip}:${port}/" &
 	php -S "${ip}:${port}";
 }
-
 
 # Compare original and gzipped file size
 function gz() {
@@ -178,6 +196,10 @@ function gifify() {
   else
 	echo "proper usage: gifify <input_movie.mov>. You DO need to include extension."
   fi
+}
+
+function homestead() {
+    ( cd ~/Homestead && vagrant $* )
 }
 
 ctags=/usr/local/bin/ctags

@@ -3,7 +3,7 @@
 	name = mugukamil
 
 [core]
-	excludesfile = ~/.gitignore
+	excludesfile = /Users/mugukamil/.gitignore
 	attributesfile = ~/.gitattributes
 	# insanely beautiful diffs
 	pager = diff-highlight | diff-so-fancy | less -r
@@ -28,3 +28,7 @@
 # push easily. http://stackoverflow.com/a/23918418/89484
 [push]
 	default = current
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
