@@ -1,4 +1,6 @@
 set nocompatible " be iMproved
+scriptencoding utf-8
+set encoding=utf-8
 
 so ~/.vim/plugins.vim
 
@@ -25,7 +27,7 @@ set smartindent
 set smarttab
 set copyindent
 set list
-set list listchars=tab:»·,trail:·
+set listchars=tab:\ \ ,trail:·,eol:¬
 set wildmenu
 
 "set timeout timeoutlen=200 ttimeoutlen=100
@@ -35,7 +37,7 @@ let @a="yiw/}O$this->iipa = iia$iipa;ii€ýb€ýa?constOOprotected $pa;"
 highlight Search cterm=underline
 
 "-------------Visuals---------------"
-colorscheme atom-dark-256
+colorscheme tender
 set t_Co=256
 
 set guioptions-=l
@@ -96,7 +98,7 @@ nmap ; :
 nmap <Leader>w :w!<cr>
 
 "Load the current buffer in Chrome
-nmap ,c :!open -a Google\ Chrome %<cr>
+nmap <silent>,c :!open -a Google\ Chrome "%"<cr><cr>
 
 "NerdTree Toggle
 nmap <C-b> :NERDTreeToggle<cr>
@@ -108,6 +110,7 @@ nmap <D-e> :CtrlPMRUFiles<cr>
 
 " I don't want to pull up these folders/files when calling CtrlP
 set wildignore+=*/vendor/**
+set wildignore+=.DS_Store
 set wildignore+=*/public/forum/**
 set wildignore+=*/node_modules/**
 set wildignore+=*/bower_components/**
@@ -190,3 +193,9 @@ augroup END
 "Sort PHP use statements
 vmap <Leader>su ! awk '{ print length(), $0 \| "sort -n \| cut -d\\  -f2-" }'<cr>
 
+"Python
+augroup python
+    autocmd FileType python set sw=4
+    autocmd FileType python set ts=4
+    autocmd FileType python set sts=4
+augroup END

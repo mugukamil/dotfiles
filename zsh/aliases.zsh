@@ -5,16 +5,17 @@ alias shitcommit='git commit -m "💩"'
 alias mv='mv -v'
 alias cp='cp -v'
 alias ls='ls -G --color'
+alias g='gulp'
 
 alias v=mvim
 
-alias nconf='mvim /usr/local/etc/nginx/nginx.conf'
+alias nconf="$EDITOR /usr/local/etc/nginx/nginx.conf"
 
-alias aliaseszsh='mvim ~/Dropbox/DOTFILES/zsh/aliases.zsh'
+alias aliaseszsh="$EDITOR ~/Dropbox/DOTFILES/zsh/aliases.zsh"
 
 alias mysqlmamp=/Applications/MAMP/Library/bin/mysql
 
-alias hosts='sudo $EDITOR /etc/hosts'
+alias hosts="sudo $EDITOR /etc/hosts"
 
 alias getwp='get https://wordpress.org/latest.tar.gz && tar -xzf latest.tar.gz'
 
@@ -37,7 +38,7 @@ alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %
 alias sshkey="cat ~/.ssh/id_rsa.pub | pbcopy && echo 'Copied to clipboard.'"
 
 # Flush Directory Service cache
-alias flush="dscacheutil -flushcache && killall -HUP mDNSResponder"
+alias flush="sudo dscacheutil -flushcache && sudo killall -HUP mDNSResponder"
 
 # File Size
 alias fs="stat -f \"%z bytes\""
@@ -49,7 +50,7 @@ alias get="curl -O -L"
 alias lscleanup="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user && killall Finder"
 
 # View HTTP traffic
-alias sniff="sudo ngrep -d 'en1' -t '^(GET|POST) ' 'tcp and port 80'"
+alias sniff="sudo ngrep -d 'en0' -t '^(GET|POST) ' 'tcp and port 80'"
 alias httpdump="sudo tcpdump -i en1 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET \/.*\""
 
 # BROWSERS
@@ -70,6 +71,11 @@ alias x+="chmod +x"
 
 # git root
 alias gr='[ ! -z `git rev-parse --show-cdup` ] && cd `git rev-parse --show-cdup || pwd`'
+
+# Command counter
+comc() {
+    history | awk '{print $4}' | sort | uniq -c | sort -rn | head
+}
 
 # Magic project Opener
 repo() { cd "$("$HOME/Dropbox/DOTFILES/bin/repo" $1)"; }

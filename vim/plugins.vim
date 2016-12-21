@@ -2,7 +2,6 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'scrooloose/nerdtree'
 Plug 'mattn/emmet-vim'
-Plug 'moll/vim-node'
 Plug 'pangloss/vim-javascript'
 Plug 'tomtom/tlib_vim'
 Plug 'tpope/vim-fugitive'
@@ -17,7 +16,6 @@ Plug 'othree/html5.vim'
 "Plug 'Valloric/YouCompleteMe'
 Plug 'garbas/vim-snipmate'
 Plug 'honza/vim-snippets'
-Plug 'evidens/vim-twig'
 Plug 'tpope/vim-surround'
 Plug 'StanAngeloff/php.vim'
 Plug 'jwalton512/vim-blade'
@@ -30,12 +28,14 @@ Plug 'itchyny/lightline.vim'
 "Plug 'vim-airline/vim-airline'
 "Plug 'vim-airline/vim-airline-themes'
 Plug 'digitaltoad/vim-pug'
-Plug 'flazz/vim-colorschemes'
 Plug 'shawncplus/phpcomplete.vim'
 Plug 'isRuslan/vim-es6'
 Plug 'posva/vim-vue'
 Plug 'hhsnopek/vim-sugarss'
 Plug 'mustache/vim-mustache-handlebars'
+Plug 'kassio/vim-session_manager'
+Plug 'jacoborus/tender'
+Plug 'othree/javascript-libraries-syntax.vim'
 
 " Add plugins to &runtimepath
 call plug#end()
@@ -56,12 +56,16 @@ let g:javascript_conceal_arrow_function = "⇒"
 let NERDTreeHijackNetrw = 0
 let NERDTreeMinimalUI = 0
 let NERDTreeShowHidden = 1
+let NERDTreeIgnore=['\.pyc$']
 
 " CtrlP
 let g:ctrlp_use_caching = 1
 let g:ctrlp_clear_cache_on_exit = 0
 let g:ctrlp_custom_ignore = 'node_modules\DS_Store\git'
 let g:ctrlp_match_window = 'top,order:ttb,min:1,max:20,results:20'
+
+" Tender Color scheme
+let macvim_skip_colorscheme=1
 
 "LightLine
 let g:lightline = {
@@ -130,3 +134,6 @@ let g:SuperTabDefaultCompletionType = '<c-n>'
 let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+
+" js libraries
+let g:used_javascript_libs = 'underscore,backbone, jquery, underscore, underscore, backbone, prelude, angularjs, angularui, angularuirouter, react, flux, requirejs, sugar, jasmine, chai, handlebars, ramda, vue, d3'

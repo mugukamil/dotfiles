@@ -21,7 +21,6 @@ brew install sfnt2woff
 brew install sfnt2woff-zopfli
 brew install woff2
 
-brew install aircrack-ng
 brew install bfg
 brew install binutils
 brew install binwalk
@@ -31,7 +30,6 @@ brew install dns2tcp
 brew install fcrackzip
 brew install foremost
 brew install hashpump
-brew install hydra
 brew install john
 brew install knock
 brew install netpbm
@@ -92,7 +90,6 @@ brew install newlisp
 brew install ngrep
 brew install nikto
 brew install node
-brew install nvm
 brew install optipng
 brew install perl
 brew install homebrew/php/php-cs-fixer
@@ -100,9 +97,6 @@ brew install homebrew/php/php70-mcrypt
 brew install homebrew/php/phplint
 brew install pngquant
 brew install protobuf
-brew install pv
-brew install python
-brew install python3
 brew install qt
 brew install reaver
 brew install rethinkdb
@@ -118,8 +112,6 @@ brew install watchman
 brew install wget
 brew install z
 brew install zsh
-brew install ack
-brew install dark-mode
 brew install imagemagick --with-webp
 brew install lua
 brew install lynx
@@ -131,11 +123,9 @@ brew install rhino
 brew install speedtest_cli
 brew install ssh-copy-id
 brew install testssl
-brew install tree
 brew install vbindiff
 brew install webkit2png
 brew install zopfli
-brew install htop
 brew install the_silver_searcher
 brew install gist
 brew install ttfautohint fontforge --with-python
@@ -162,21 +152,16 @@ nvm use stable
 nvm alias default stable
 
 # Node.js
-brew install casperjs
 npm config set loglevel warn
 npm config set save-prefix '~'
-npm install -g grunt-cli
 npm install -g gulp
 npm install -g yo
-npm install -g jshint
 npm install -g eslint
-npm install -g jscs
 npm install -g bower
-npm install -g docpad
-npm install -g npm-check-updates
 
 # Python
 brew install python
+brew install python3
 
 # Remove outdated versions from the cellar
 brew cleanup

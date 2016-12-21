@@ -50,7 +50,7 @@ HIST_STAMPS="dd.mm.yyyy"
 ZSH_CUSTOM="$HOME/Dropbox/DOTFILES/zsh"
 # Plugins (see ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-plugins=(brew catimg command-not-found composer common-aliases encode64 jsontools tmux git gitfast autojump npm osx sublime extract colored-man-pages emoji-clock git-extras git-flow thefuck vagrant zsh-syntax-highlighting zsh-autosuggestions)
+plugins=(brew command-not-found composer common-aliases encode64 jsontools git gitfast autojump npm osx sublime extract colored-man-pages git-extras git-flow thefuck vagrant zsh-syntax-highlighting zsh-autosuggestions mercurial)
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor root)
 source $ZSH/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $ZSH/oh-my-zsh.sh
@@ -80,3 +80,4 @@ fi
 if [ -f /Users/mugukamil/Desktop/google-cloud-sdk/completion.zsh.inc ]; then
   source '/Users/mugukamil/Desktop/google-cloud-sdk/completion.zsh.inc'
 fi
+
